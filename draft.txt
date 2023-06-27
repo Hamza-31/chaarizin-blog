@@ -1,0 +1,99 @@
+/**
+ * article controller
+ */
+
+import { factories } from '@strapi/strapi'
+
+export default factories.createCoreController('api::article.article', ({ strapi }) => ({
+	async findOne(ctx) {
+		const { slug } = ctx.params
+		const entity = await strapi.db.query('api::article.article').findOne({
+			where: { slug }
+		})
+		const sanitizedEntity = await this.sanitizeOutput(entity)
+		return this.transformResponse(sanitizedEntity)
+	}
+}));
+
+
+in the case of using strapi as backend CMS, NextJS for frontend and Meilisearch as a search engine. I use two libraries in the frontend in the component
+
+
+-------------
+
+<InstantSearch
+				indexName="article"
+				searchClient={searchClient}
+			>
+				<Configure hitsPerPage={6}
+					attributesToSnippet={['content:30']}
+					snippetEllipsisText={'...'} />
+				<Stats />
+				<SearchBox />
+				{/* <ClearRefinements /> */}
+
+				<RefinementList attribute="catName" />
+
+				<Hits hitComponent={Hit} />
+				<Pagination />
+
+			</InstantSearch>
+
+
+
+
+----------------- BLOG PAGE -----------
+
+// 'use client'
+import Categories from '@/components/Categories'
+import RecentArticles from '@/components/articles/RecentArticles'
+import React, { Suspense } from 'react'
+import { ParsedUrlQuery } from 'querystring';
+import Loader from '@/components/Loader';
+import NewsLetter from '@/components/NewsLetter';
+import axios from '@/lib/axios';
+
+interface SearchParams extends ParsedUrlQuery {
+	category?: string;
+	page?: string;
+	query?: string
+}
+
+const BlogPage = ({ searchParams }: { searchParams: SearchParams }) => {
+	// const searchParams = useSearchParams()
+	const categories = searchParams?.category?.split(',') || []
+	const page = searchParams.page || 0
+	const start = (+page === 1 || +page === 0) ? 0 : (+page - 1) * 6;
+	const query = searchParams.query?.toString() || ''
+	return (
+		<>
+			<section className=" relative my-5 flex flex-col justify-start h-32 min-[1024px]:h-40 items-center">
+				<h2 className="uppercase lg:text-6xl md:text-5xl text-4xl">
+					Blog
+				</h2>
+				{/* @ts-expect-error Server Component */}
+				<Categories />
+			</section>
+			<Suspense fallback={<Loader size="w-5 h-5" />}>
+				{/* @ts-expect-error Server Component */}
+				<RecentArticles query={query} categories={categories} start={+start} page={page} />
+			</Suspense>
+			<aside className="mx-auto max-w-7xl max-w-screen-lg">
+				<NewsLetter />
+			</aside>
+		</>
+	)
+}
+
+export default BlogPage
+
+
+
+{
+  "data":{
+    "title":"test",
+  "content": "test",
+  "slug":"test"
+  }
+}
+

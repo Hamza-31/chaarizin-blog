@@ -2,26 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+	box-sizing: border-box;
+	scrollbar-width: thin;
+	scrollbar-color: #463F66 #F2ECF4;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+	background: #F2ECF4;
+	border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #463F66;
+	border-radius: 14px;
+	border: 2px solid #F2ECF4;
+}
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	/* Your default theme */
+	--background: #F2ECF4;
+	--foreground: #463F66;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+[data-theme='dark'] {
+	--background: #463F66;
+	--foreground: #F2ECF4;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@font-face {
+	font-family: "Alegreya";
+	src: url("../public/fonts/Alegreya-VariableFont_wght.ttf");
+}
+
+@font-face {
+	font-family: "PatrickHand";
+	src: url("../public/fonts/PatrickHand-Regular.ttf");
+}
+
+@font-face {
+	font-family: "PlayfairDisplay";
+	src: url("../public/fonts/PlayfairDisplay-VariableFont_wght.ttf");
+}
+
+@font-face {
+	font-family: "Pecita";
+	src: url("../public/fonts/Pecita.ttf");
+}
+
+#modal {
+	background-color: rgba(0, 0, 0, 0.9);
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	z-index: 20;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#modal:empty {
+	display: none;
+}
+
+.ais-Hits-list {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	grid-auto-flow: row;
+}
+
+@media screen and (max-width: 770px) {
+	.ais-Hits-list {
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+	}
 }
