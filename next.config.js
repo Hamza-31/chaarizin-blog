@@ -10,6 +10,18 @@ const nextConfig = {
 	  },
 	images: {
 		remotePatterns: [
+			{
+			  protocol: "https",
+			  hostname: "chaarizin-blog-6ff1e6396f99.herokuapp.com/",
+			  port: "",
+			  pathname: "/api",
+			},
+			{
+			  protocol: "https",
+			  hostname: "127.0.0.1",
+			  port: "chaarizin-api-6b9b561dda2e.herokuapp.com",
+			  pathname: "/uploads/**",
+			},
 		  {
 			protocol: "http",
 			hostname: "localhost",
