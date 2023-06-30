@@ -1,21 +1,15 @@
 'use client'
-import { Disclosure, Transition } from "@headlessui/react";
-import { ArrowRightOnRectangleIcon, Bars3Icon, Cog6ToothIcon, UserIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Disclosure } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import ThemeButton from "./ThemeButton";
 import { useEffect, useState } from "react";
 import handleLogoHtmlTag from "@/lib/handleLogoHtmlTags";
-import Modal from "./Modal";
 import Loader from "./Loader";
 import { signOut, useSession } from "next-auth/react";
 import MyPopover from "./MyPopOver";
 import Reveal from "./motions/Reveal";
-// import SearchInput from "./SearchInput";
-// import { signOut, useSession } from "next-auth/react";
-// import Loader from "./Loader";
-// import MyPopover from "./MyPopover";
-// import { Fragment } from "react";
 
 const navigation = [
 	//   { name: "Home", href: "/" },
@@ -67,7 +61,7 @@ export default function Navbar() {
 										</Disclosure.Button>
 									</div>
 									<div className="flex flex-1 items-center justify-center sm:justify-between">
-										<Link className="flex flex-shrink-0  items-center" href="/">
+										<Link className="ml-7 flex flex-shrink-0  items-center" href="/">
 											{handleLogoHtmlTag(path)}
 										</Link>
 
@@ -133,30 +127,7 @@ export default function Navbar() {
 											</ul>
 										</div>
 									</div>
-									{/* <div className=" flex justify-end space-x-4">
-									<button onClick={() => setShowModal(true)}>Click</button>
-									{
-										showModal ?
-											(<Modal>
-												<div
-													className="absolute flex justify-center items-center inset-y-0 left-0 right-0"
-													onClick={() => {
-														setShowModal(false);
-													}}
-												>
-													<div
-														onClick={(e) => e.stopPropagation()}
-														className="bg-white z-50">
-														<h2>Modal</h2>
-
-														<button className="cursor-pointer" onClick={() => setShowModal(false)} >No</button>
-
-													</div>
-												</div>
-											</Modal>) : null
-									}
-								</div> */}
-									<div className="sm:hidden flex">
+									<div className="sm:hidden flex mr-2">
 
 										{mounted && (
 											<ThemeButton />
@@ -244,33 +215,6 @@ export default function Navbar() {
 											</button>
 										</>
 									)}
-									{/* {status === "authenticated" && (
-                    <>
-                      <Link
-                        className="text-dark-purple hover:translate-x-2 transition duration-300 ease-linear block px-3 py-2 rounded-md text-base font-medium"
-                        href={`/user/${session.user.id}`}
-                      >
-                        Profile
-                      </Link>
-                      <Disclosure.Button
-                        key="logout"
-                        onClick={handleLogout}
-                        className="text-dark-purple hover:translate-x-2 transition duration-300 ease-linear block px-3 py-2 rounded-md text-base font-medium"
-                      >
-                        Logout {session.user.username}
-                      </Disclosure.Button>
-                    </>
-                  )}
-                  {status === "unauthenticated" && (
-                    <Disclosure.Button
-                      key="login"
-                      as={Link}
-                      href="/auth/login"
-                      className="text-dark-purple hover:translate-x-2 transition duration-300 ease-linear block px-3 py-2 rounded-md text-base font-medium"
-                    >
-                      Login
-                    </Disclosure.Button>
-                  )} */}
 								</div>
 							</Disclosure.Panel>
 
