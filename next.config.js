@@ -43,6 +43,12 @@ const nextConfig = {
 		  },
 		  {
 			protocol: "https",
+			hostname: "scontent-cdg3-1.cdninstagram.com",
+			port: "",
+			pathname: "/v/**",
+		  },
+		  {
+			protocol: "https",
 			hostname: "scontent-cdg4-1.cdninstagram.com",
 			port: "",
 			pathname: "/v/**",
