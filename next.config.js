@@ -9,7 +9,11 @@ const nextConfig = {
 		return config;
 	  },
 	images: {
-		domains: ['chaarizin-api-6b9b561dda2e.herokuapp.com','chaarizin-blog-6ff1e6396f99.herokuapp.com','http://ec2-13-53-73-34.eu-north-1.compute.amazonaws.com/'],
+		domains: [
+			'chaarizin-api-bucket.s3.eu-west-3.amazonaws.com',
+			'chaarizin-api-6b9b561dda2e.herokuapp.com',
+			'chaarizin-blog-6ff1e6396f99.herokuapp.com',
+			'http://ec2-13-53-73-34.eu-north-1.compute.amazonaws.com/'],
 		remotePatterns: [
 		  {
 			protocol: "http",
