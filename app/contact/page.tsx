@@ -1,6 +1,5 @@
 import SocialLinks from '@/components/SocialLinks'
 import ContactForm from '@/components/forms/ContactForm'
-import Reveal from '@/components/motions/Reveal'
 import React from 'react'
 
 const Contact = () => {

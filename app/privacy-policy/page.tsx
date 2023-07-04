@@ -1,4 +1,3 @@
-import Reveal from "@/components/motions/Reveal";
 import axios from "@/lib/axios";
 import Markdown from "markdown-to-jsx";
 import React from "react";

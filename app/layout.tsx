@@ -6,7 +6,6 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import CustomThemeProvider from '@/lib/CustomThemeProvider'
 import CustomSessionProvider from '@/lib/CustomSessionProvider'
-import MotionWrapper from '@/components/motions/MotionWrapper'
 
 export const metadata = {
 	metadataBase: new URL(process.env.NEXT_PUBLIC_CHAARIZIN_URL as string),

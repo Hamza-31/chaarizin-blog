@@ -15,7 +15,6 @@ declare module 'next-auth' {
 	}
 }
 
-// export const authOptions: NextAuthOptions = 
 const handler = NextAuth({
 	secret: process.env.NEXTAUTH_SECRET,
 	session: {

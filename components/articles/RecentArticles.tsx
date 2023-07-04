@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 import CreatedAt from "./CreatedAt";
 import { getAssetURL } from "@/lib/getAssetUrl";
-import search from '../../public/icons/search_icon.svg'
 import qs from "@/lib/queryString";
 import axios from "@/lib/axios";
 import Pagination from "../Pagination";
@@ -34,8 +33,6 @@ const getData = async (categories: String[], start: number, page: number, query:
 			"excerpt",
 		],
 		pagination: {
-			// start: start,
-			// limit: 6,
 			page: page,
 			pageSize: 6,
 		},
@@ -82,7 +79,6 @@ const RecentArticles = async ({ categories, start, page, query }: { categories: 
 	// const lastPage = Math.ceil(meta.pagination.total / 6);
 	const totalFetchedArticles = meta.pagination.total
 	return (
-		// <div>the articles</div>
 		<section className="px-5 mx-auto">
 			{categories.length === 0 && (
 				<div className="mx-auto max-w-7xl  max-w-screen-xl md:max-w-screen-xs grid grid-cols-3 gap-4 ">
@@ -101,7 +97,6 @@ const RecentArticles = async ({ categories, start, page, query }: { categories: 
 								{totalFetchedArticles === 1 ? `${totalFetchedArticles} Result` : `${totalFetchedArticles} Results`}  for : <span className="text-red">{decodeURI(query)}</span>
 							</div>)
 					}
-					{/* <Image className="inline ml-3 scale-125 cursor-pointer rounded-xl" src={search} alt="search" /> */}
 
 					<SearchInput />
 				</div>

@@ -6,12 +6,6 @@ import { Fragment, useState } from "react";
 
 function MyPopover({ username, handleLogout }: { username: string, handleLogout: () => void }) {
 	const [isShowing, setIsShowing] = useState(false)
-	// const userAccount = document.querySelector('#user-account');
-	// const userLinks = document.querySelector('#user-profile');
-	// userAccount?.addEventListener('mouseenter', () => setIsShowing(true));
-
-	// userLinks?.addEventListener('mouseleave', () => setIsShowing(false));
-	// userLinks?.addEventListener('mouseleave', () => setIsShowing(false));
 	return (
 		<Popover className="relative">
 			{({ open }) => (

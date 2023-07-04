@@ -103,7 +103,6 @@ const ContactForm = () => {
 								<button
 									className="absolute right-3 bottom-2"
 									type="submit"
-								//   disabled={isSubmitting}
 								>
 									{isSubmitting ? (
 										<Loader size="w-[20px] h-[20px]" />

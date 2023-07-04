@@ -4,7 +4,6 @@ import React, { FC, Fragment, useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Transition } from "@headlessui/react";
-import { getAssetURL } from "@/lib/getAssetUrl";
 
 interface Article {
 	id: number;
@@ -23,8 +22,6 @@ interface LatestArticlesProps {
 }
 const MobileArticles: FC<LatestArticlesProps> = ({ articles, images }) => {
 	const [currentIndex, setCurrentIndex] = useState(0);
-	//   const [transition, setTransition] = useState(false);
-	// const post = posts.find((_, index) => index === currentIndex);
 	const prevSlide = () => {
 		const isFirstSlide = currentIndex === 0;
 		const newIndex = isFirstSlide ? articles.length - 1 : currentIndex - 1;
@@ -62,11 +59,6 @@ const MobileArticles: FC<LatestArticlesProps> = ({ articles, images }) => {
 						<Link
 							className={`${index === currentIndex ? "" : "hidden"}`}
 							href={`/blog/${article.slug}`}
-						// href={{
-						// 	pathname: "/blog/[slug]",
-						// 	query: { id: post.id, slug: post.slug },
-						// }}
-						//   as={`/blog/${post.slug}`}
 						>
 							<article className="mb-3 min-h-[310px] w-[300px] max-[1024px]:pb-6 transition duration-500 ease-in-out">
 								<div
@@ -153,7 +145,6 @@ const MobileArticles: FC<LatestArticlesProps> = ({ articles, images }) => {
 					</button>
 				</div>
 			</div>
-			{/* <div>Mobile</div> */}
 		</>
 	);
 };

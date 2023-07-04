@@ -1,11 +1,10 @@
-import axios, { setAccessToken, setCsrfToken } from '@/lib/axios'
-import { NextRequest, NextResponse } from 'next/server'
+import axios, { setCsrfToken } from '@/lib/axios'
+import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
 	const data = await request.json()
 	const { email } = data
 	try {
-		// setAccessToken(accessToken)
 		setCsrfToken()
 		const res = await axios.post("/api/auth/forgot-password", {
 			email: email,

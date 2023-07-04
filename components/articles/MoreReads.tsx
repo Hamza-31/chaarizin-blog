@@ -13,10 +13,6 @@ interface Article {
 	title: string
 }
 
-// interface MoreReadsProps {
-// 	moreReadsArticles: Article[]
-// }
-
 const getData = async () => {
 	const params = qs.stringify(
 		{
@@ -30,8 +26,6 @@ const getData = async () => {
 			pagination: {
 				start: 3,
 				limit: 3,
-				// page: page,
-				// pageSize: 6,
 			},
 			populate: ["postImage",],
 			sort: ['createdAt:desc'],

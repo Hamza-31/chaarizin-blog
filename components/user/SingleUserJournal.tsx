@@ -9,13 +9,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 const SingleUserJournal = ({
-	journal,
-	// handleDeleteJournal,
-	// setOpenModal,
-	// setEditJournal,
-	// setDeleteJournal,
-	// deleteJournal,
-	// deleteJournalResponse,
+	journal
 }: any) => {
 	const session = useSession() as any
 	const router = useRouter()

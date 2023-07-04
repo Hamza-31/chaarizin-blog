@@ -2,7 +2,6 @@
 import React, { Suspense } from 'react'
 import NewsLetter from '@/components/NewsLetter';
 import ArticlesSearch from '@/components/search/ArticlesSearch';
-import Reveal from '@/components/motions/Reveal';
 
 
 const BlogPage = () => {

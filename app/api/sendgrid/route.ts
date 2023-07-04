@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 import sendgrid from "@sendgrid/mail";
 import emailTemplate from '@/lib/emailTemplate';
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY as string);

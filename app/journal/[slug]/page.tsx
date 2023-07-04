@@ -2,7 +2,6 @@ import BreadCrumb from '@/components/BreadCrumb'
 import NewsLetter from '@/components/NewsLetter'
 import TimeAgo from '@/components/articles/TimeAgo'
 import MotionWrapper from '@/components/motions/MotionWrapper'
-import Reveal from '@/components/motions/Reveal'
 import axios from '@/lib/axios'
 import qs from '@/lib/queryString'
 import React from 'react'
@@ -27,7 +26,6 @@ const getData = async (slug: string) => {
 			content: journalResponse.data.data.attributes.content,
 			author: journalResponse.data.data.attributes.author.data.attributes.username,
 		};
-		console.log("journalResponse : ", journal)
 		return {
 			journal: journal
 		}

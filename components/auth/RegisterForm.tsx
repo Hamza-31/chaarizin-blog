@@ -7,7 +7,6 @@ import CustomInput from '../forms/CustomInput'
 import Link from 'next/link'
 import Loader from '../Loader'
 import { registerSchema } from '@/lib/FormikSchema'
-import { Session } from 'inspector'
 import WarningAlert from '../WarningAlert'
 
 const RegisterForm = () => {
@@ -59,7 +58,6 @@ const RegisterForm = () => {
 						terms: false,
 					}}
 					onSubmit={(values, { setSubmitting }) => {
-						// handleSignUp(values, setSubmitting);
 						handleRegister(values)
 						setTimeout(() => {
 

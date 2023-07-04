@@ -9,7 +9,6 @@ import { usePathname, useRouter } from "next/navigation";
 import axiosClient from "@/lib/clientAxios";
 import { addCommentSchema } from "@/lib/FormikSchema";
 import WarningAlert from "../WarningAlert";
-import { cookies } from "next/dist/client/components/headers";
 
 
 const AddComment = ({ articleId }: { articleId: number }) => {

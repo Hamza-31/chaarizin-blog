@@ -5,11 +5,7 @@ import NewsLetter from "@/components/NewsLetter";
 import AddComment from "@/components/articles/AddComment";
 import ArticleComments from "@/components/articles/ArticleComments";
 import MoreReads from "@/components/articles/MoreReads";
-import Reveal from "@/components/motions/Reveal";
 import axios from "@/lib/axios";
-// import AddComment from "@/components/posts/AddComment";
-// import MoreReads from "@/components/posts/MoreReads";
-// import PostComments from "@/components/posts/PostComments";
 import { getAssetURL } from "@/lib/getAssetUrl";
 import qs from "@/lib/queryString";
 import Markdown from "markdown-to-jsx";
@@ -46,9 +42,6 @@ const getData = async (slug: string) => {
 	}
 }
 
-// interface SearchParams extends ParsedUrlQuery {
-// 	url?: string
-// }
 
 
 const ArticlePage = async ({ params }: { params: { slug: string } }) => {
@@ -56,7 +49,6 @@ const ArticlePage = async ({ params }: { params: { slug: string } }) => {
 	const CustomImage = ({ alt, src }: { alt: string, src: string }) => (
 		<Image
 			alt={alt}
-			//   src={`${getAssetURL(article.postImage.data.attributes.formats.small.url)}`}
 			src={src.startsWith("/") ? `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${src}` : src}
 			width={390}
 			height={390}

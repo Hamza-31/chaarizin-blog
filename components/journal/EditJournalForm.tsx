@@ -7,14 +7,11 @@ import { addJournalSchema } from "@/lib/FormikSchema";
 import { useSession } from "next-auth/react";
 import axiosClient from "@/lib/clientAxios";
 import WarningAlert from "../WarningAlert";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const EditJournalForm = ({
-	//   status,
-	//   session,
 	setShowModal,
 	editJournal,
-	//   editJournalResponse,
 }: any) => {
 	const session = useSession() as any
 	const router = useRouter()
@@ -155,7 +152,6 @@ const EditJournalForm = ({
 						)}
 					</>
 				)}
-				{/* {!editJournal.title && <Loader />} */}
 			</div>
 		</div>
 	);

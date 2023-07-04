@@ -2,7 +2,7 @@
 import { loginSchema } from '@/lib/FormikSchema'
 import { Formik } from 'formik'
 import { signIn, useSession } from 'next-auth/react'
-import { redirect, usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import CustomInput from '../forms/CustomInput'
 import Link from 'next/link'

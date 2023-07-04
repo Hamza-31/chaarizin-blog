@@ -3,14 +3,6 @@ import CategoryCheckbox from "./forms/CategoryCheckbox";
 import axios from "@/lib/axios";
 import qs from "@/lib/queryString";
 
-// interface Category{
-// 	id: number,
-// 	name: string
-// }
-
-// interface CategoriesProps {
-//  categories : Category[]
-// }
 
 const getCategories = async () => {
 	const params = qs.stringify(

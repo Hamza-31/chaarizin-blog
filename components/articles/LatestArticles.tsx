@@ -2,21 +2,11 @@
 import { getAssetURL } from "@/lib/getAssetUrl";
 import Image from "next/image";
 import Link from "next/link";
-import React, { FC } from "react";
+import React from "react";
 import MobileArticles from "./MobileArticles";
 import qs from "@/lib/queryString";
 import axios from "@/lib/axios";
 import ScaleMotion from "../motions/ScaleMotion";
-// interface Post {
-// 	id: number;
-// 	slug: string;
-// 	postImage: string;
-// 	title: string;
-// }
-
-// interface LatestPostsProps {
-// 	posts: Post[];
-// }
 
 const getData = async () => {
 	const params = qs.stringify(
@@ -41,7 +31,6 @@ const getData = async () => {
 			articles: articles ?? [],
 			meta: meta ?? []
 		};
-		// return {}
 	} catch (error) {
 		console.log("Error Fetching Latest Articles: ", error);
 		return {
@@ -71,11 +60,6 @@ const LatestPosts = async () => {
 							<article className="mb-5 w-80 mx-auto h-fit">
 								<Link
 									href={`/blog/${article.slug}`}
-								// href={{
-								// 	pathname: "/blog/[slug]",
-								// 	query: { id: post.id, slug: post.slug },
-								// }}
-								// as={`/blog/${post.slug}`}
 								>
 									<div
 										className="border-2 border-dark-purple dark:border-beige relative w-[300px] h-[200px]"
@@ -99,9 +83,6 @@ const LatestPosts = async () => {
 					))}
 				</div>
 			</div>
-			{/* <div className="lg:hidden mx-auto relative h-[340px] px-4 flex justify-center ">
-				Mobile
-			</div> */}
 			<MobileArticles articles={articles} images={articles.map((article: Article) => {
 				return { id: article.id, src: getAssetURL(article.postImage.data.attributes.formats.small.url) }
 			})} />

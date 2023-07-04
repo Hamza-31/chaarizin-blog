@@ -10,19 +10,11 @@ import Reveal from '@/components/motions/Reveal';
 const getData = async (page: number) => {
 	const params = qs.stringify(
 		{
-			// filters: {
-			// 	article: {
-			// 		slug: {
-			// 			$eq: slug
-			// 		}
-			// 	}
-			// },
 			fields: ["title", "slug"],
 			pagination: {
 				page: page,
 				pageSize: 6,
 			},
-			// populate: ["author"],
 			sort: ['createdAt:desc'],
 		},
 		{

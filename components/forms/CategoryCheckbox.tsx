@@ -49,10 +49,6 @@ const CategoryCheckbox: FC<CategoryCheckboxProps> = ({ category }) => {
 				onChange={() => {
 					selectArticlesByCategory(searchParams.has('page'), searchParams.has('category'), checked);
 				}}
-				// onChange={() => {
-				// 	if (!checked) setChecked(true)
-				// 	if (checked) setChecked(false)
-				// }}
 				className="hidden peer"
 				checked={checked}
 			/>

@@ -3,8 +3,6 @@ import Markdown from "markdown-to-jsx";
 import BreadCrumb from "@/components/BreadCrumb";
 import SocialLinks from "@/components/SocialLinks";
 import axios from "@/lib/axios";
-import { error } from "console";
-import Reveal from "@/components/motions/Reveal";
 
 const getData = async () => {
 	try {

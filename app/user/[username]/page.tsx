@@ -21,7 +21,6 @@ const getData = async (username: string, page: number) => {
 				page: page,
 				pageSize: 6,
 			},
-			// populate: ["author"],
 			sort: ['createdAt:desc'],
 		},
 		{

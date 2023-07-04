@@ -1,6 +1,5 @@
 import axios, { setAccessToken, setCsrfToken } from '@/lib/axios'
-import slugify from '@/lib/slugify'
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
 	const data = await request.json()
