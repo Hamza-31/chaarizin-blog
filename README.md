@@ -1,6 +1,6 @@
 # Chaarizin
 
-[Chaarizin](https://chaarizin.ma/) web site is an e-commerce blog, built with built with [Next.js](https://nextjs.org/).
+[Chaarizin](http://www.chaarizin.ma/) web site is an e-commerce blog, built with built with [Next.js](https://nextjs.org/).
 
 ## Project developper
 
