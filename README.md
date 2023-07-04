@@ -104,6 +104,6 @@ NextAuth doc : [NextAuth](https://next-auth.js.org/).
 
 Tailwind doc : [Material UI](https://tailwindcss.com/).
 
-Meilisearch doc : [Formik](https://https://www.meilisearch.com//).
+Meilisearch doc : [Meilisearch](https://https://www.meilisearch.com//).
 
 Formik doc : [Formik](https://formik.org/).
