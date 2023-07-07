@@ -8,7 +8,7 @@ export async function POST(request: Request) {
 	const { email, message, username } = data
 	try {
 		const response = await sendgrid.send({
-			to: email, // change it to admin process.env.SENDGRID_EMAIL_TO
+			to: process.env.SENDGRID_EMAIL_FROM as string, // change it to admin process.env.SENDGRID_EMAIL_TO
 			from: process.env.SENDGRID_EMAIL_FROM as string,
 			subject: `Contact Chaarizin ${username}`,
 			html: emailTemplate({ email, message }),

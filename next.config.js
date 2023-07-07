@@ -1,5 +1,21 @@
 /** @type {import('next').NextConfig} */
+require('dotenv').config()
+const { loadEnvConfig } = require("@next/env");
+loadEnvConfig(process.env.NEXT_PUBLIC_STRAPI_API_URL);
+
 const nextConfig = {
+	publicRuntimeConfig: {
+		url: process.env.NEXT_PUBLIC_STRAPI_API_URL,
+	  },
+	  async redirects() {
+		return [
+		  {
+			source: "/user",
+			destination: "/",
+			permanent: true,
+		  },
+		];
+	  },
 	webpack: config => {
 		config.ignoreWarnings = [
 		  { module: /node_modules\/node-fetch\/lib\/index\.js/ },

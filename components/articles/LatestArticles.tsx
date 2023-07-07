@@ -13,6 +13,7 @@ const getData = async () => {
 		{
 			fields: ["title", "slug"],
 			pagination: {
+				start: 0,
 				limit: 3,
 			},
 			populate: ["postImage"],
