@@ -1,14 +1,40 @@
-'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { use } from 'react'
 import Reveal from '../motions/Reveal'
+import axios from '@/lib/axios'
+import Markdown from 'markdown-to-jsx'
+
+const getData = async () => {
+	try {
+		const res = await axios.get("/api/curl-club")
+		const { content } = res?.data?.data?.attributes
+		if (content) {
+			return {
+				content: content,
+
+			} as any
+		}
+		if (!content) {
+			return {
+				content: "",
+			}
+		}
+	} catch (error) {
+		console.log("Curl Club Error : ", error)
+		return {
+			content: "",
+		}
+	}
+
+}
 
 const CurlClub = () => {
+	const { content } = use(getData())
 	return (
 
-		<section className="w-full bg-beige dark:bg-gradient-to-r dark:from-[#b2aa9d] dark:via-[#aba291] dark:to-[#90846c] h-screen flex flex-col items-center justify-center">
+		<section className="w-full bg-beige dark:bg-gradient-to-r dark:from-[#b2aa9d] dark:via-[#aba291] dark:to-[#90846c] min-h-screen flex flex-col items-center justify-center">
 			<article className="lg:w-2/4 w-3/4 max-[500px]:w-full max-[500px]:px-4 mx-auto text-center dark:text-dark-purple">
-				<h4 className="text-5xl uppercase lg:w-3/4  mx-auto">Curl Club</h4>
+				<h4 className="text-5xl max-[750px]:pt-11 uppercase lg:w-3/4  mx-auto">Curl Club</h4>
 				<svg
 					className="mx-auto mt-2"
 					width="197"
@@ -23,18 +49,16 @@ const CurlClub = () => {
 						strokeLinecap="round"
 					/>
 				</svg>
-
-				<p className="pt-12 ">
-					A common space where we can express and share experiences, but not
-					only. It could also be dissapointment, anger with society, family,
-					excitement for a transition, turning points, advice on how to
-					overcome social pressure, how to improve confidence, tips for
-					juicier curls, struggles, etc...
-				</p>
-				<p className="mt-4">
-					It doesn’t have to be five pages, nor eloquent.
-				</p>
-				<div className="mt-7 min-[524px]:grid min-[524px]:grid-cols-2 max-[524px]:w-3/5 max-[524px]:mx-auto grid-cols-1 block gap-2">
+				<div
+					className={`
+					mx-auto text-center
+					pt-12
+					prose prose-p:dark:text-white prose-p:pt-4
+`}
+				>
+					<Markdown>{content}</Markdown>
+				</div>
+				<div className="my-7 min-[524px]:grid min-[524px]:grid-cols-2 mx-auto w-2/4 max-[800px]:w-3/4 max-[524px]:w-2/5 max-[524px]:mx-auto grid-cols-1 block gap-2">
 					<Link
 						href="/journal/create"
 						className="block lg:mb-0 max-[524px]:mb-2 px-1 bg-dark-purple text-beige border-2 border-dark-purple"
