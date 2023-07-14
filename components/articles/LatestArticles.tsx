@@ -63,12 +63,13 @@ const LatestPosts = async () => {
 									href={`/blog/${article.slug}`}
 								>
 									<div
-										className="border-2 border-dark-purple dark:border-beige relative w-[300px] h-[200px]"
+										className="border-2 border-dark-purple overflow-hidden dark:border-beige relative w-[300px] h-[200px]"
 									>
 										<Image
 											className="object-cover object-center"
 											src={`${getAssetURL(article.postImage.data.attributes.formats.small.url)}`}
-											fill
+											height={200}
+											width={300}
 											alt={article.title}
 											priority={true}
 										/>

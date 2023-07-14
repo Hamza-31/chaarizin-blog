@@ -6,6 +6,9 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import CustomThemeProvider from '@/lib/CustomThemeProvider'
 import CustomSessionProvider from '@/lib/CustomSessionProvider'
+import { Alegreya } from 'next/font/google'
+
+const alegreya = Alegreya({ subsets: ['latin'], weight: '400' })
 
 export const metadata = {
 	metadataBase: new URL(process.env.NEXT_PUBLIC_CHAARIZIN_URL as string),
@@ -25,7 +28,7 @@ export default function RootLayout({
 
 		<html lang="en" suppressHydrationWarning={true}>
 
-			<body className='dark:text-beige dark:bg-dark-purple font-alegreya text-dark-purple tracking-wider' >
+			<body className={`dark:text-beige dark:bg-dark-purple text-dark-purple tracking-wider ${alegreya.className}`} >
 				<CustomThemeProvider >
 					<CustomSessionProvider>
 						<div id="modal"></div>

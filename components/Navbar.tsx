@@ -129,7 +129,7 @@ export default function Navbar() {
 											</ul>
 										</div>
 									</div>
-									<div className="sm:hidden flex mr-2">
+									<div className="sm:hidden flex mr-4">
 
 										{mounted && (
 											<ThemeButton />

@@ -2,6 +2,9 @@
 import React from 'react'
 import SocialLinks from '../SocialLinks'
 import Reveal from '../motions/Reveal'
+import { Gaegu } from 'next/font/google'
+
+const gaegu = Gaegu({ subsets: ['latin'], weight: '400' })
 
 const Hero = () => {
 	return (
@@ -18,7 +21,7 @@ const Hero = () => {
 					visible={{ opacity: 100, x: 0, y: 0 }}
 					transition={{ duration: 0.5, delay: 0.5 }}
 				>
-					<h2 className="uppercase font-patrickHand text-5xl max-[380px]:text-4xl  text-white drop-shadow-2xl">
+					<h2 className={`uppercase text-5xl max-[380px]:text-4xl  text-white drop-shadow-2xl ${gaegu.className}`}>
 						Curls n’ stuff
 					</h2>
 				</Reveal>

@@ -62,11 +62,12 @@ const MobileArticles: FC<LatestArticlesProps> = ({ articles, images }) => {
 						>
 							<article className="mb-3 min-h-[310px] w-[300px] max-[1024px]:pb-6 transition duration-500 ease-in-out">
 								<div
-									className="border-2 border-dark-purple dark:border-beige relative w-[300px] h-[200px]"
+									className="border-2 border-dark-purple dark:border-beige overflow-hidden relative w-[300px] h-[200px]"
 								>
 									<Image
 										className="object-cover object-center"
-										fill
+										height={200}
+										width={300}
 										src={images.find(img => img.id === article.id)?.src ?? ''}
 										alt={article.title}
 									/>

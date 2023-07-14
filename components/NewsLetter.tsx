@@ -2,7 +2,9 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
 import NewsletterForm from "./forms/NewsLetterForm";
+import { Gaegu } from 'next/font/google'
 
+const gaegu = Gaegu({ subsets: ['latin'], weight: '400' })
 
 const NewsLetter = () => {
 	const [showModal, setShowModal] = useState(false)
@@ -27,7 +29,7 @@ const NewsLetter = () => {
 			</svg>
 
 			<div className="text-center mx-auto">
-				<h4 className="w-3/4 text-3xl mx-auto font-patrickHand text-neo-purple uppercase mb-12">
+				<h4 className={`w-3/4 text-3xl mx-auto text-neo-purple uppercase mb-12 ${gaegu.className}`}>
 					Stay Tuned you guys !{" "}
 				</h4>
 				<p className="mb-12 w-3/4 mx-auto ">

@@ -35,16 +35,16 @@ const ArticlesSearch = () => {
 					attributesToSnippet={['content:30']}
 					snippetEllipsisText={'...'} />
 
-
-				<CustomRefinementList sortBy={["name:asc"]} attribute="category" />
+				<h2 id='displayed-content' className='min-[1024px]:text-4xl text-3xl mb-2 text-red'>
+					Recent Articles
+				</h2>
 
 
 				<div className='px-4'>
 
 					<div className="pt-4  grid min-[1024px]:grid-cols-3 grid-cols-2 max-[600px]:grid-cols-1">
-						<h2 id='displayed-content' className='min-[1024px]:text-4xl text-3xl mb-2 text-red min-[1024px]:col-span-2'>
-							Recent Articles
-						</h2>
+						<CustomRefinementList sortBy={["name:asc"]} attribute="category" />
+
 						<div>
 
 							<CustomSearchBox />
@@ -88,6 +88,7 @@ const Hit = ({ hit }: any) => {
 					<Image
 						className="object-cover object-center"
 						fill
+						sizes='100vw'
 						src={`${getAssetURL(hit.postImage.formats.small.url)}`}
 						alt={hit.title}
 
