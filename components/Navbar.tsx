@@ -10,6 +10,8 @@ import Loader from "./Loader";
 import { signOut, useSession } from "next-auth/react";
 import MyPopover from "./MyPopOver";
 import Reveal from "./motions/Reveal";
+import dynamic from 'next/dynamic'
+const MobileMenu = dynamic(() => import('./MobileMenu'))
 
 const navigation = [
 	//   { name: "Home", href: "/" },
@@ -136,87 +138,7 @@ export default function Navbar() {
 								</div>
 							</div>
 
-							<Disclosure.Panel className="sm:hidden transition ease-in-out duration-300">
-								<div className="space-y-1 ml-1 px-2 pt-2 pb-3">
-									{navigation.map((item) => (
-										<Disclosure.Button
-											key={item.name}
-											as={Link}
-											href={item.href}
-											className={classNames(
-												path.includes(item.href)
-													? "text-neo-purple"
-													: " hover:translate-x-2 transition duration-300 ease-linear  ",
-												"block px-3 py-2 rounded-md text-base font-medium"
-											)}
-										>
-											{item.name}
-										</Disclosure.Button>
-									))}
-									{status === "loading" && (
-										<li key="loader" className="pr-3 h-fit">
-											<Loader size="w-[20px] h-[20px]" />
-										</li>
-									)}
-									{status === "unauthenticated" && (
-
-										<button
-											disabled={path.includes("login")}
-											key="login"
-											onClick={() => {
-												// specify redirect page
-												router.push(
-													`/auth/login?callbackUrl=${path}`
-												);
-											}}
-											className={classNames(
-												path.includes("login")
-													? "text-neo-purple"
-													: " hover:translate-x-2 transition duration-300 ease-linear  ",
-												"block px-3 py-2 rounded-md text-base font-medium"
-											)}
-										>
-											Login
-										</button>
-
-									)}
-									{session?.user && status === "authenticated" && (
-										<>
-											<Link
-												id="user-profile"
-												className={classNames(
-													path.includes("user")
-														? "text-neo-purple"
-														: " hover:translate-x-2 transition duration-300 ease-linear  ",
-													"block px-3 py-2 rounded-md text-base font-medium"
-												)}
-												href={`/user/${encodeURI(session.user.username)}`}
-											>
-												Your account <em>({session.user.username})</em>
-											</Link>
-											<Link
-												id="forgot-password"
-												className={classNames(
-													path.includes("forgot-password")
-														? "text-neo-purple"
-														: " hover:translate-x-2 transition duration-300 ease-linear  ",
-													"block px-3 py-2 rounded-md text-base font-medium"
-												)}
-												href={`/auth/forgot-password`}
-											>
-												Forgot Password
-											</Link>
-											<button
-												id="logout-user"
-												onClick={handleLogout}
-												className="text-red hover:translate-x-2 transition duration-300 ease-linear block px-3 py-2 rounded-md text-base font-medium"
-											>
-												Logout
-											</button>
-										</>
-									)}
-								</div>
-							</Disclosure.Panel>
+							<MobileMenu />
 
 						</>
 					)}
