@@ -33,9 +33,9 @@ export default function RootLayout({
 					<CustomSessionProvider>
 						<div id="modal"></div>
 						<Navbar />
-						<main className='min-h-screen' >
-							{children}
-						</main>
+
+						{children}
+
 						<Footer />
 					</CustomSessionProvider>
 				</CustomThemeProvider>

@@ -8,11 +8,9 @@ const AboutLayout = ({
 }) => {
 
 	return (
-		<main className='max-w-screen-xl min-h-screen mx-auto'>
-			<MotionWrapper>
-				{children}
-			</MotionWrapper>
-		</main>
+		<MotionWrapper className='max-w-screen-xl min-h-screen mx-auto'>
+			{children}
+		</MotionWrapper>
 
 	)
 }

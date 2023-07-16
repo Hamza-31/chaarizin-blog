@@ -8,12 +8,10 @@ const ContactLayout = ({
 }) => {
 
 	return (
-		<main className='max-w-screen-xl min-h-screen mx-auto'>
-			<MotionWrapper>
+		<MotionWrapper className='max-w-screen-xl min-h-screen mx-auto'>
 
-				{children}
-			</MotionWrapper>
-		</main>
+			{children}
+		</MotionWrapper>
 
 	)
 }

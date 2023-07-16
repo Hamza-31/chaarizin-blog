@@ -53,7 +53,7 @@ const CurlClub = () => {
 					className={`
 					mx-auto text-center
 					pt-12
-					prose prose-p:dark:text-white prose-p:pt-4
+					prose prose-p:dark:text-dark-purple prose-p:pt-4
 `}
 				>
 					<Markdown>{content}</Markdown>

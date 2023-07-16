@@ -17,7 +17,7 @@ const Aside = dynamic(() => import('../components/home/Aside'), {
 
 export default function Home() {
 	return (
-		<MotionWrapper>
+		<MotionWrapper className='min-h-screen'>
 			<Hero />
 			<Articles />
 			<CurlClub />

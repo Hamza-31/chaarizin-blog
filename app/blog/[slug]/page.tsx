@@ -85,12 +85,12 @@ const ArticlePage = async ({ params }: { params: { slug: string } }) => {
 										mx-auto 
 										pb-7 pt-28 max-[1024px]:pt-20 max-[550px]:pt-28 max-[441px]:pt-36 max-[315px]:pt-52
 										prose-li:marker:text-neo-purple prose-li:dark:text-white 
-										prose prose-p:dark:text-white min-[900px]:prose-p:w-[560px]
+										prose prose-p:dark:text-white min-[900px]:prose-p:w-[560px] prose-p:break-normal
 										prose-em:dark:text-beige prose-em:text-dark-purple
 										prose-strong:dark:text-white prose-strong:text-dark-purple
 										prose-headings:text-dark-purple prose-headings:dark:text-beige
 										prose-blockquote:text-dark-purple prose-blockquote:dark:border-light-purple
-										prose-a:text-neo-purple prose-a:dark:text-light-purple
+										prose-a:text-neo-purple prose-a:dark:text-light-purple prose-a:break-words
 										prose-img:rounded-[100px] min-[600px]:prose-img:max-w-[393px] prose-img:mx-auto prose-img:block
 		`}
 						>
