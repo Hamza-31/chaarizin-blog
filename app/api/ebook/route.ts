@@ -6,7 +6,7 @@ sendgrid.setApiKey(process.env.SENDGRID_API_KEY as string);
 import fs from "fs";
 import ebookEmailTemplate from '@/lib/ebookEmailTemplate';
 
-const pathToAttachment = `${__dirname}/files/chaarizin_ebook.pdf`;
+const pathToAttachment = `/files/chaarizin_ebook.pdf`;
 const attachment = fs.readFileSync(pathToAttachment).toString("base64");
 
 export async function POST(request: Request) {
