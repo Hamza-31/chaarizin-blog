@@ -5,11 +5,9 @@ import React from 'react'
 
 const CreateJournalPage = () => {
 	return (
-		<MotionWrapper>
-			<section className="h-screen">
-				<AddJournalForm />
-			</section>
-		</MotionWrapper>
+		<section className="h-screen">
+			<AddJournalForm />
+		</section>
 	)
 }
 
