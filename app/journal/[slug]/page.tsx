@@ -42,7 +42,7 @@ const SingleJournal = async ({ params }: { params: { slug: string } }) => {
 	const { journal } = await getData(params.slug.toString()) as any
 	return (
 
-		<MotionWrapper>
+		<>
 			<BreadCrumb postTitle={journal.title} page="Journal" />
 			<article className="py-16 px-12 max-[500px]:px-4 drop-shadow-lg bg-beige dark:bg-dark-purple mt-20 min-[720px]:w-[700px] mx-auto border border-beige rounded">
 				<h1 className="text-xl w-4/5 mx-auto text-center font-bold">
@@ -62,7 +62,7 @@ const SingleJournal = async ({ params }: { params: { slug: string } }) => {
 				</div>
 			</article>
 			<NewsLetter />
-		</MotionWrapper>
+		</>
 	)
 }
 
