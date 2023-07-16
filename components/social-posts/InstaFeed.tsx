@@ -33,7 +33,7 @@ const InstaFeed = async () => {
 	const posts = await getData()
 	return (
 		<section className="max-[500px]:bg-dark-purple pb-3">
-			<h3 className="my-7 text-3xl max-[500px]:text-beige px-2 pt-2 min-[960px]:px-16">
+			<h3 className="py-7 text-3xl max-[500px]:text-beige px-2 min-[960px]:px-16">
 				Us on Instagram
 			</h3>
 			<div className="block px-2 min-[960px]:px-16">

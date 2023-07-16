@@ -8,9 +8,9 @@ const Aside = () => {
 	return (
 		<aside
 			id="newsletter"
-			className="mx-auto min-h-screen mb-10 max-w-7xl max-w-screen-lg"
+			className="mx-auto mb-10 max-w-7xl max-w-screen-lg"
 		>
-			<NewsLetter />
+			{/* <NewsLetter /> */}
 			<Suspense fallback={<Loader size="w-5 h-5" />}>
 				{/* @ts-expect-error Server Component */}
 				<InstaFeed />

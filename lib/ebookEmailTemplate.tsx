@@ -1,4 +1,4 @@
-export default function emailTemplate({ email, message }: { email: string, message: string }) {
+export default function ebookEmailTemplate() {
 	return `
 	<!DOCTYPE html>
 	<html>
@@ -226,18 +226,34 @@ export default function emailTemplate({ email, message }: { email: string, messa
 						  style="
 						 color: #8F6ED4;
 						 text-align: center; 
-						  ">Chaarizin Contact : <span style="color: #463F66;">${email}</span></h1>
-							<p
-							  style="
-								font-family: 'Alegreya', serif;
-								font-size: 14px;
-								font-weight: normal;
-								margin: 0;
-								margin-bottom: 15px;
-							  "
-							>
-							  ${message}
+						  ">Chaarizin</h1>
+							<p>
+								Heyy !
 							</p>
+								<p>
+	
+								First thank you, and I’m glad you took a step into knowing your hair better. You won’t regret it 	❤️
+								</p>
+								<p>
+								As promised, you’ll find the e-book attached below this email.
+								</p>
+								<p>
+								Hopefully when you finish reading it, you’ll <strong style="color: #DB5F5F;">love your hair</strong> a bit more and will be able to <strong style="color: #DB5F5F;">create a routine</strong> that makes <strong style="color: #DB5F5F;">your curls thrive</strong>. If not, aji nrejje3 lik floussek :)
+								</p>
+								<p>
+								Enjoy reading it and if you ever want further information about a specific topic, text me on <a target="_blank" href="https://www.instagram.com/chaarizin/">@chaarizin</a>.
+								</p>
+								<p>
+									<em>
+								I’m Nissrine, I ask myself silly and important questions regarding curly hair and  I try to answer them in blog articles on <a target="_blank" href="http://www.chaarizin.ma">chaarizin.ma</a>
+							</em>
+						</p>
+								<p>
+								Nharek mebrok !
+								</p>
+	
+	
+							
 						  </td>
 						</tr>
 					  </table>

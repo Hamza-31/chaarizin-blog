@@ -4,6 +4,9 @@ const { loadEnvConfig } = require("@next/env");
 loadEnvConfig(process.env.NEXT_PUBLIC_STRAPI_API_URL);
 
 const nextConfig = {
+	env: {
+		ROOT: __dirname,
+	  },
 	publicRuntimeConfig: {
 		url: process.env.NEXT_PUBLIC_STRAPI_API_URL,
 	  },
