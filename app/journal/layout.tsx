@@ -8,7 +8,7 @@ const JournalLayout = ({
 }) => {
 
 	return (
-		<main>
+		<main className='min-h-screen'>
 			<MotionWrapper>
 				{children}
 			</MotionWrapper>

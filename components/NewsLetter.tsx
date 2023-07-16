@@ -29,7 +29,7 @@ const NewsLetter = () => {
 			</svg>
 
 			<div className="text-center mx-auto">
-				<h4 className={`w-3/4 text-3xl mx-auto text-neo-purple uppercase mb-12 ${gaegu.className}`}>
+				<h4 className={`w-3/4 text-3xl max-[480px]:w-full mx-auto text-neo-purple uppercase mb-12 ${gaegu.className}`}>
 					Stay Tuned you guys !{" "}
 				</h4>
 				<p className="mb-12 w-3/4 mx-auto ">
@@ -81,9 +81,9 @@ const NewsLetter = () => {
 								</div>
 							</Modal>) : null
 					}
-					<form>
+					<form className="mx-2">
 						{/* <input name="csrfToken" type="hidden" defaultValue={csrfToken} /> */}
-						<label htmlFor="email" className="hidden max-[826px]:relative">
+						<label htmlFor="email" className="hidden">
 							Email address
 						</label>
 						<input
@@ -91,7 +91,7 @@ const NewsLetter = () => {
 							id="email"
 							type="email"
 							readOnly
-							className="rounded-md mx-auto lg:ml-20 min-[826px]:ml-20 lg:w-2/4 md:w-2/4 max-[826px]:w-3/4 max-[450px]:w-full  py-1 px-3 bg-beige border-2 border-dark-purple"
+							className="rounded-md mx-auto lg:ml-20 min-[826px]:ml-20 lg:w-2/4 md:w-2/4 max-[826px]:w-3/4 max-[450px]:w-full  py-1 px-3 bg-beige"
 						/>
 						<button
 							disabled
