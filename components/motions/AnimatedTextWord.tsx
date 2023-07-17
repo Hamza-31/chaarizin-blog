@@ -37,7 +37,7 @@ const AnimatedTextWord = ({ text, className }: any) => {
 	};
 	return (
 		<motion.div
-			className="w-4/5 my-10 mx-auto font-pecita break-keep"
+			className="min-[500px]:w-4/5 my-10 ml-4 min-[500px]:mx-auto font-pecita break-keep"
 			style={{ overflow: "", display: "flex", flexWrap: "wrap", fontSize: "2rem" }}
 			variants={container}
 			initial="hidden"
@@ -45,7 +45,7 @@ const AnimatedTextWord = ({ text, className }: any) => {
 		>
 			{words.map((word: string, index: any) => (
 
-				<motion.p className="sm:text-7xl text-5xl inline-block text-dark-purple" variants={child} key={index} style={{ marginRight: "5px" }}>
+				<motion.p className="sm:text-7xl text-5xl inline text-dark-purple" variants={child} key={index} style={{ marginRight: "5px" }}>
 					{word.split("").map((letter: string) => (
 
 						<motion.span
