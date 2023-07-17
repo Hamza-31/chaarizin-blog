@@ -33,7 +33,7 @@ const CurlClub = () => {
 	return (
 
 		<section className="w-full bg-beige dark:bg-gradient-to-r dark:from-[#b2aa9d] dark:via-[#aba291] dark:to-[#90846c] min-h-screen flex flex-col items-center justify-center">
-			<article className="lg:w-2/4 w-3/4 max-[500px]:w-full max-[500px]:px-4 mx-auto text-center dark:text-dark-purple">
+			<article className="mt-7 lg:w-2/4 w-3/4 max-[500px]:w-full max-[500px]:px-4 mx-auto text-center dark:text-dark-purple">
 				<h4 className="text-5xl max-[750px]:pt-11 uppercase lg:w-3/4  mx-auto">Curl Club</h4>
 				<svg
 					className="mx-auto mt-2"
