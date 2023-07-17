@@ -57,7 +57,7 @@ const ArticlesSearch = () => {
 						</div>
 					</div>
 				</div>
-				<h2 id='displayed-content' className='min-[1024px]:text-4xl text-3xl mb-2 text-red'>
+				<h2 id='displayed-content' className='min-[1024px]:text-4xl text-3xl mt-11 mb-0 text-red'>
 					Recent Articles
 				</h2>
 				<Hits hitComponent={Hit} />
