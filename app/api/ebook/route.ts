@@ -5,15 +5,18 @@ import axios, { setCsrfToken } from '@/lib/axios';
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY as string);
 import fs from "fs";
 import ebookEmailTemplate from '@/lib/ebookEmailTemplate';
+import path from 'path';
 
-const pathToAttachment = `${process.env.NEXT_PUBLIC_CHAARIZIN_URL}/files/chaarizin_ebook.pdf`;
-const attachment = fs.readFileSync(pathToAttachment).toString("base64");
+// const pathToAttachment = `${process.env.NEXT_PUBLIC_CHAARIZIN_URL}/files/chaarizin_ebook.pdf`;
+// const attachment = fs.readFileSync(pathToAttachment).toString("base64");
 
 export async function POST(request: Request) {
+	const dir = path.resolve("./public", process.env.NODE_ENV === "development" ? "files\\chaarizin_ebook.pdf" : "files/chaarizin_ebook.pdf");
+	const attachment = fs.readFileSync(dir).toString("base64");
 	const data = await request.json()
 	const { email } = data
 	const message = "Your Free Ebook"
-	console.log(pathToAttachment)
+	// console.log(dir)
 	try {
 		setCsrfToken()
 		const res = await axios.post("/api/newsletter-contacts", { data: { email } }) as any
@@ -42,4 +45,6 @@ export async function POST(request: Request) {
 		return NextResponse.json({ error: "Something wrong happened!" })
 
 	}
+	// return NextResponse.json({ message: "Your Ebook has been succesfully sent. Please Check your email address." })
+
 }
