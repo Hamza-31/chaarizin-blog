@@ -12,7 +12,7 @@ const NewsLetter = () => {
 
 	return (
 		<section className="mx-5 py-20 mx-auto overflow-hidden">
-			<svg
+			{/* <svg
 				className="opacity-60 lg:scale-220 md:scale-150 md:translate-x-6 md:translate-y-5 lg:translate-x-24 lg:translate-y-14"
 				width="137"
 				height="87"
@@ -26,7 +26,7 @@ const NewsLetter = () => {
 					strokeLinecap="round"
 					className="svg-elem-1"
 				></path>
-			</svg>
+			</svg> */}
 
 			<div className="text-center mx-auto">
 				<h4 className={`w-3/4 text-3xl max-[480px]:w-full mx-auto text-neo-purple uppercase mb-12 ${gaegu.className}`}>
@@ -52,7 +52,7 @@ const NewsLetter = () => {
 										setShowModal(false);
 									}}
 								>
-									<div className="relative text-white bg-dark-purple rounded max-[460px]:w-full w-[450px] h-fit mx-auto ">
+									<div className="relative text-white bg-dark-purple rounded w-full min-[460px]:w-[450px] h-fit mx-auto ">
 										<div
 											onClick={() => {
 												setShowModal(false);
@@ -91,13 +91,13 @@ const NewsLetter = () => {
 							id="email"
 							type="email"
 							readOnly
-							className="rounded-md mx-auto lg:ml-20 min-[826px]:ml-20 lg:w-2/4 md:w-2/4 max-[826px]:w-3/4 max-[450px]:w-full  py-1 px-3 bg-beige"
+							className="p-2 mx-auto lg:ml-20 min-[826px]:ml-20 lg:w-2/4 md:w-2/4 max-[826px]:w-3/4 max-[450px]:w-full bg-beige"
 						/>
 						<button
 							disabled
 							onClick={(e) => e.preventDefault()}
 							type="button"
-							className="text-red bg-beige max-[826px]:absolute mt-[6px] -translate-x-20 "
+							className="text-red bg-beige max-[826px]:absolute mt-[8px] -translate-x-20 "
 						>
 							{" "}
 							Subscribe

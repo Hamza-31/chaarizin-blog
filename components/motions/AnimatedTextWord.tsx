@@ -44,22 +44,20 @@ const AnimatedTextWord = ({ text, className }: any) => {
 			animate="visible"
 		>
 			{words.map((word: string, index: any) => (
-				<>
-					<motion.p className="sm:text-7xl text-5xl inline-block text-dark-purple" variants={child} key={index} style={{ marginRight: "5px" }}>
-						{word.split("").map((letter: string) => (
 
-							<motion.span
-								variants={child}
-								style={{ marginRight: "5px" }}
-								key={index}
-							>
-								{letter === "," ? <>, <strong>Curlies</strong>, </> : letter}
-							</motion.span>
-						))}
+				<motion.p className="sm:text-7xl text-5xl inline-block text-dark-purple" variants={child} key={index} style={{ marginRight: "5px" }}>
+					{word.split("").map((letter: string) => (
 
-					</motion.p>
-					{"\u00A0"}
-				</>
+						<motion.span
+							variants={child}
+							style={{ marginRight: "5px" }}
+							key={index}
+						>
+							{letter === "," ? <>, <strong>Curlies</strong>, </> : letter}
+						</motion.span>
+					))}&nbsp;
+
+				</motion.p>
 			))}
 		</motion.div>
 	);
