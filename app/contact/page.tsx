@@ -13,11 +13,11 @@ const Contact = () => {
 					Contact
 				</h2>
 				<p className="text-center text-lg">
-					Feel free to email on{" "}
+					<em>Feel free to email on</em>{" "}
 					<a className="text-neo-purple" href="mailto:contact@chaarizin.com">
 						contact@chaarizin.com
 					</a>
-					<span className="block py-8">or</span>
+					<em className="block py-8">or</em>
 				</p>
 				<ContactForm />
 			</section>

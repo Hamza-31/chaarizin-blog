@@ -26,7 +26,7 @@ const searchClient = instantMeiliSearch(meilisearchHost as string, masterKey,
 const ArticlesSearch = () => {
 
 	return (
-		<section className='ais-InstantSearch relative'>
+		<section id="search" className='ais-InstantSearch relative'>
 			<InstantSearch
 				indexName="article"
 				searchClient={searchClient}
@@ -34,12 +34,6 @@ const ArticlesSearch = () => {
 				<Configure hitsPerPage={6}
 					attributesToSnippet={['content:30']}
 					snippetEllipsisText={'...'} />
-
-				<h2 id='displayed-content' className='min-[1024px]:text-4xl text-3xl mb-2 text-red'>
-					Recent Articles
-				</h2>
-
-
 				<div className='px-4'>
 
 					<div className="pt-4  grid min-[1024px]:grid-cols-3 grid-cols-2 max-[600px]:grid-cols-1">
@@ -48,7 +42,7 @@ const ArticlesSearch = () => {
 						<div>
 
 							<CustomSearchBox />
-							<CustomSortBy
+							{/* <CustomSortBy
 								items={[
 									{
 										value: 'article:createdAt:desc',
@@ -59,11 +53,13 @@ const ArticlesSearch = () => {
 										label: 'Relevent',
 									}
 								]}
-							/>
+							/> */}
 						</div>
 					</div>
 				</div>
-
+				<h2 id='displayed-content' className='min-[1024px]:text-4xl text-3xl mb-2 text-red'>
+					Recent Articles
+				</h2>
 				<Hits hitComponent={Hit} />
 				<CustomPagination />
 

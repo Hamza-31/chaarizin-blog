@@ -70,8 +70,7 @@ export const addJournalSchema = yup.object().shape({
 		.required("*"),
 	content: yup
 		.string()
-		// change it to 300
-		.min(10, "Type at least 300 characters before you submit.")
+		.min(300, "Type at least 300 characters before you submit.")
 		.max(3000, "Please keep it short.")
 		.required("*"),
 

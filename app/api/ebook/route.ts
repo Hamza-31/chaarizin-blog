@@ -7,16 +7,11 @@ import fs from "fs";
 import ebookEmailTemplate from '@/lib/ebookEmailTemplate';
 import path from 'path';
 
-// const pathToAttachment = `${process.env.NEXT_PUBLIC_CHAARIZIN_URL}/files/chaarizin_ebook.pdf`;
-// const attachment = fs.readFileSync(pathToAttachment).toString("base64");
-
 export async function POST(request: Request) {
 	const dir = path.resolve("./public", process.env.NODE_ENV === "development" ? "files\\chaarizin_ebook.pdf" : "files/chaarizin_ebook.pdf");
 	const attachment = fs.readFileSync(dir).toString("base64");
 	const data = await request.json()
 	const { email } = data
-	const message = "Your Free Ebook"
-	// console.log(dir)
 	try {
 		setCsrfToken()
 		const res = await axios.post("/api/newsletter-contacts", { data: { email } }) as any

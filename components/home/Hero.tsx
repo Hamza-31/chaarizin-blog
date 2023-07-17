@@ -21,7 +21,7 @@ const Hero = () => {
 					visible={{ opacity: 100, x: 0, y: 0 }}
 					transition={{ duration: 0.5, delay: 0.5 }}
 				>
-					<h2 className={`uppercase text-5xl max-[380px]:text-4xl  text-white drop-shadow-2xl ${gaegu.className}`}>
+					<h2 className={`uppercase text-4xl max-[380px]:text-4xl  text-white drop-shadow-2xl ${gaegu.className}`}>
 						Curls n’ stuff
 					</h2>
 				</Reveal>

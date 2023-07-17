@@ -31,9 +31,8 @@ const CustomPagination = (props: PaginationProps) => {
 					isDisabled={isFirstPage}
 					createURL={createURL}
 					refine={refine}
-					className={`${isFirstPage ? "" : "text-red"}`}
 				>
-					<ArrowLongLeftIcon className="mr-2 inline" width={24} />
+					<ArrowLongLeftIcon className={`mr-2 inline ${isFirstPage ? "hidden" : ""}`} width={24} />
 				</PaginationItem>
 
 				{pages.map((page) => (
@@ -44,7 +43,7 @@ const CustomPagination = (props: PaginationProps) => {
 						isDisabled={false}
 						createURL={createURL}
 						refine={refine}
-						className={`${page === currentRefinement ? "scale-150 drop-shadow-xl" : ""}`}
+						className={`${page === currentRefinement ? "text-red drop-shadow-xl" : ""}`}
 					>
 						{page + 1}
 					</PaginationItem>
@@ -56,9 +55,8 @@ const CustomPagination = (props: PaginationProps) => {
 					isDisabled={isLastPage}
 					createURL={createURL}
 					refine={refine}
-					className={`${isLastPage ? "" : "text-red"}`}
 				>
-					<ArrowLongRightIcon className="ml-2 inline" width={24} />
+					<ArrowLongRightIcon className={`ml-2 inline ${isLastPage ? "hidden" : ""}`} width={24} />
 				</PaginationItem>
 
 
@@ -82,7 +80,9 @@ const PaginationItem = (props: PaginationItemProps) => {
 	if (isDisabled) {
 		return (
 			<li >
-				<span className="ais-Pagination-link" {...rest} />
+				<span
+
+					className="ais-Pagination-link" {...rest} />
 			</li>
 		);
 	}
@@ -91,7 +91,7 @@ const PaginationItem = (props: PaginationItemProps) => {
 		<li className={className}>
 			<a
 				className="ais-Pagination-link"
-				href={createURL(value)}
+				href="#search"
 				onClick={(event) => {
 					if (isModifierClick(event)) {
 						return;

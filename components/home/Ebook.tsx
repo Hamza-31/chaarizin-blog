@@ -53,7 +53,7 @@ const Ebook = () => {
 
 
 
-					<p className="mb-12 text-2xl mx-3 min-[1024px]:w-4/5">
+					<p className="mb-12 text-lg min-[800px]:text-2xl mx-3 min-[1024px]:w-4/5">
 						A 30 pages e-book that covers the basics of curly hair, from the anatomy to the needs,the products to styling techniques, and many tips.
 					</p>
 					<div className='h-[378px] w-[243px] relative min-[1024px]:hidden mx-auto mb-11'>
