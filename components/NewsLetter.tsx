@@ -29,10 +29,10 @@ const NewsLetter = () => {
 			</svg> */}
 
 			<div className="text-center mx-auto">
-				<h4 className={`w-3/4 text-3xl max-[480px]:w-full mx-auto text-neo-purple uppercase mb-12 ${gaegu.className}`}>
+				<h4 className={`w-3/4 text-3xl max-[480px]:w-full mx-auto text-neo-purple uppercase ${gaegu.className}`}>
 					Stay Tuned you guys !{" "}
 				</h4>
-				<p className="mb-12 w-3/4 mx-auto ">
+				<p className="my-7 w-3/4 mx-auto ">
 					Receive latest articles, journal stories and many other things coming
 					in the way actually.
 				</p>
