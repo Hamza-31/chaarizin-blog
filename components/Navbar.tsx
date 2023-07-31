@@ -66,7 +66,7 @@ export default function Navbar() {
 
 
 	return (
-		<header className={`dark:border-b-[1px] dark:border-light-purple bg-white w-full fixed z-50 shadow-md ${show && 'hidden'}`}>
+		<header className={`dark:border-b-[1px] dark:border-light-purple dark:bg-dark-purple bg-white w-full fixed z-50 shadow-md ${show && 'hidden'}`}>
 			<Reveal
 				hidden={{ opacity: 0, y: 0, x: 0 }}
 				visible={{ opacity: 100, y: 0, x: 0 }}
