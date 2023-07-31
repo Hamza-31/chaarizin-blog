@@ -7,7 +7,7 @@ import Footer from '@/components/Footer'
 import CustomThemeProvider from '@/lib/CustomThemeProvider'
 import CustomSessionProvider from '@/lib/CustomSessionProvider'
 import { Alegreya } from 'next/font/google'
-import Script from 'next/script'
+import GoogleAnalytics from '@/lib/googleAnalytics'
 const alegreya = Alegreya({ subsets: ['latin'], weight: '400' })
 
 export const metadata = {
@@ -27,16 +27,7 @@ export default function RootLayout({
 	return (
 
 		<html lang="en" suppressHydrationWarning={true}>
-			<Script id="google_analytics" async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}></Script>
-			<Script id='google_analytics_script' dangerouslySetInnerHTML={{
-				__html: typeof window !== 'undefined' && `
-	window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
-	`
-			}}></Script>
+			<GoogleAnalytics />
 			<body className={`dark:text-beige dark:bg-dark-purple text-dark-purple tracking-wider ${alegreya.className}`} >
 				<CustomThemeProvider >
 					<CustomSessionProvider>
