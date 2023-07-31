@@ -26,9 +26,8 @@ function classNames(...classes: String[]): string {
 }
 
 export default function Navbar() {
-	const [show, setShow] = useState(true);
+	const [show, setShow] = useState(false);
 	const [lastScrollY, setLastScrollY] = useState(0);
-
 	const controlNavbar = () => {
 		if (typeof window !== 'undefined') {
 			if (window.scrollY < lastScrollY) { // if scroll down hide the navbar
