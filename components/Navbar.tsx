@@ -26,6 +26,32 @@ function classNames(...classes: String[]): string {
 }
 
 export default function Navbar() {
+	const [show, setShow] = useState(true);
+	const [lastScrollY, setLastScrollY] = useState(0);
+
+	const controlNavbar = () => {
+		if (typeof window !== 'undefined') {
+			if (window.scrollY < lastScrollY) { // if scroll down hide the navbar
+				setShow(false);
+			} else { // if scroll up show the navbar
+				setShow(true);
+			}
+
+			// remember current page location to use in the next move
+			setLastScrollY(window.scrollY);
+		}
+	};
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			window.addEventListener('scroll', controlNavbar);
+
+			// cleanup function
+			return () => {
+				window.removeEventListener('scroll', controlNavbar);
+			};
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [lastScrollY])
 	const [mounted, setMounted] = useState(false)
 	useEffect(() => setMounted(true), [])
 	const path = usePathname()
@@ -40,7 +66,7 @@ export default function Navbar() {
 
 
 	return (
-		<header className="dark:border-b-[1px] dark:border-light-purple">
+		<header className={`dark:border-b-[1px] dark:border-light-purple bg-white w-full fixed z-50 shadow-md ${show && 'hidden'}`}>
 			<Reveal
 				hidden={{ opacity: 0, y: 0, x: 0 }}
 				visible={{ opacity: 100, y: 0, x: 0 }}

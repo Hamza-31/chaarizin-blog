@@ -6,7 +6,7 @@ const MotionWrapper = ({ className, children }: { className: string, children: R
 	return (
 		<AnimatePresence>
 			<motion.main
-				className={className}
+				className={`${className} max-[640px]:pt-[47px] pt-[65px]`}
 				variants={{
 					hidden: { opacity: 0 },
 					visible: { opacity: 100 }
