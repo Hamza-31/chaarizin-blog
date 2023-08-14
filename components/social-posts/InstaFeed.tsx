@@ -22,8 +22,8 @@ const getData = async () => {
 			.filter((p: InstagramPost) => p.media_type == "IMAGE" || p.media_type == "CAROUSEL_ALBUM")
 			.slice(0, 4);
 		return instaPosts
-	} catch (error) {
-		console.log("Error Fetching Instagram Posts", error)
+	} catch (error: any) {
+		console.log("Error Fetching Instagram Posts", error.response)
 		return []
 	}
 }
@@ -31,6 +31,7 @@ const getData = async () => {
 
 const InstaFeed = async () => {
 	const posts = await getData()
+	if (posts.length === 0) return <></>
 	return (
 		<section className="pb-3">
 			<h3 className="py-7 text-3xl px-2 min-[960px]:px-16">
