@@ -16,6 +16,11 @@ export const metadata = {
 		default: 'Charizin Blog',
 		template: '%s | Charizin Blog'
 	},
+	viewport: {
+		width: 'device-width',
+		initialScale: 1,
+		maximumScale: 1,
+	},
 	description: 'Curly Hair Blogger',
 }
 
