@@ -8,7 +8,7 @@ import CustomThemeProvider from '@/lib/CustomThemeProvider'
 import CustomSessionProvider from '@/lib/CustomSessionProvider'
 import { Alegreya } from 'next/font/google'
 import GoogleAnalytics from '@/lib/googleAnalytics'
-const alegreya = Alegreya({ subsets: ['latin'], weight: '400' })
+const alegreya = Alegreya({ subsets: ['latin'], weight: ['400', '600'] })
 
 export const metadata = {
 	metadataBase: new URL(process.env.NEXT_PUBLIC_CHAARIZIN_URL as string),

@@ -26,7 +26,7 @@ export default function Home() {
 			<Articles />
 			<CurlClub />
 			<Ebook />
-			{/* <Aside /> */}
+			<Aside />
 		</MotionWrapper>
 	)
 }
