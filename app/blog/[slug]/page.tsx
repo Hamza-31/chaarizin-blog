@@ -74,8 +74,8 @@ const ArticlePage = async ({ params }: { params: { slug: string } }) => {
 
 					<div className="w-3/5 max-[700px]:w-4/5  mx-auto max-[500px]:w-full max-[500px]:px-5">
 
-						<div className=" max-[500px]:-top-28 right-0 left-0 max-[500px]:mx-6  px-1 pb-7 flex flex-col justify-center items-center border-b-[1px] border-dark-purple dark:border-light-purple">
-							<h1 className="py-5 px-2 uppercase lg:text-5xl text-center md:text-3xl text-3xl drop-shadow-lg">
+						<div className="right-0 left-0 max-[500px]:mx-6  px-1 pb-7 flex flex-col justify-center items-center border-b-[1px] border-dark-purple dark:border-light-purple">
+							<h1 className="py-5 px-1 lg:text-6xl text-center md:text-5xl text-5xl drop-shadow-lg">
 								{article?.title}
 							</h1>
 							<h2 className="text-xl px-2 mt-3 text-center">{article?.subtitle}</h2>
