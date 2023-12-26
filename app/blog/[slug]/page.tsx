@@ -72,9 +72,9 @@ const ArticlePage = async ({ params }: { params: { slug: string } }) => {
 						/>
 					</div>
 
-					<div className="relative w-3/5 max-[700px]:w-4/5  mx-auto max-[500px]:w-full max-[500px]:px-5">
+					<div className="w-3/5 max-[700px]:w-4/5  mx-auto max-[500px]:w-full max-[500px]:px-5">
 
-						<div className="absolute -top-32 max-[500px]:-top-28 right-0 left-0 max-[500px]:mx-6  px-1 pb-7 flex flex-col justify-center items-center bg-white dark:bg-dark-purple border-b-[1px] border-dark-purple dark:border-light-purple">
+						<div className=" max-[500px]:-top-28 right-0 left-0 max-[500px]:mx-6  px-1 pb-7 flex flex-col justify-center items-center border-b-[1px] border-dark-purple dark:border-light-purple">
 							<h1 className="py-5 px-2 uppercase lg:text-5xl text-center md:text-3xl text-3xl drop-shadow-lg">
 								{article?.title}
 							</h1>
@@ -83,7 +83,7 @@ const ArticlePage = async ({ params }: { params: { slug: string } }) => {
 						<div
 							className={`
 										mx-auto 
-										pb-7 pt-28 max-[1024px]:pt-20 max-[550px]:pt-28 max-[441px]:pt-36 max-[315px]:pt-52
+										py-7
 										prose-li:marker:text-neo-purple prose-li:dark:text-white 
 										prose prose-p:dark:text-white min-[900px]:prose-p:w-[560px] prose-p:break-normal
 										prose-em:dark:text-beige prose-em:text-dark-purple
