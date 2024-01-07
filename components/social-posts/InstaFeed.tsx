@@ -17,8 +17,12 @@ interface InstaPostsProps {
 const getData = async () => {
 	try {
 
-		const instagramResponse = await axios.get(`https://graph.instagram.com/me/media?limit=7&fields=id,media_url,media_type,caption,permalink&access_token=${process.env.INSTA_CLIENT}`)
-		const instaPosts = instagramResponse.data.data
+		const instagramResponse = await fetch(`https://graph.instagram.com/me/media?limit=7&fields=id,media_url,media_type,caption,permalink&access_token=${process.env.INSTA_CLIENT}`,
+			{
+				next: { revalidate: 30 }
+			})
+		const data = await instagramResponse.json();
+		const instaPosts = data.data
 			.filter((p: InstagramPost) => p.media_type == "IMAGE" || p.media_type == "CAROUSEL_ALBUM")
 			.slice(0, 4);
 		return instaPosts
