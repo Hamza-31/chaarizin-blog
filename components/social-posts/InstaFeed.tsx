@@ -15,12 +15,24 @@ interface InstaPostsProps {
 	instagramPosts: InstagramPost[];
 }
 const getData = async () => {
+	const params = qs.stringify(
+		{
+			limit: 7,
+			fields: "id,media_url,media_type,caption,permalink",
+			access_token: process.env.INSTA_CLIENT
+		},
+		{
+			encodeValuesOnly: true,
+		})
 	try {
-
-		const instagramResponse = await fetch(`https://graph.instagram.com/me/media?limit=7&fields=id,media_url,media_type,caption,permalink&access_token=${process.env.INSTA_CLIENT}`,
+		const instagramResponse = await fetch(`https://graph.instagram.com/me/media?${params}`,
 			{
 				next: { revalidate: 30 }
 			})
+		if (!instagramResponse.ok) {
+			console.log("Failed to fetch instagram posts");
+			return []
+		}
 		const data = await instagramResponse.json();
 		const instaPosts = data.data
 			.filter((p: InstagramPost) => p.media_type == "IMAGE" || p.media_type == "CAROUSEL_ALBUM")
