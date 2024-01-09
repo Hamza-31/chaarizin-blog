@@ -16,7 +16,7 @@ const ContactForm = () => {
 	});
 	const handleSendContactEmail = async (values: { email: string, username: string, message: string }) => {
 		try {
-			const res = await axiosClient.post("/api/sendgrid", {
+			const res = await axiosClient.post("/api/resend", {
 				email: values.email,
 				username: values.username,
 				message: values.message
