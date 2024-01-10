@@ -4,6 +4,13 @@ const { loadEnvConfig } = require("@next/env");
 loadEnvConfig(process.env.NEXT_PUBLIC_STRAPI_API_URL);
 
 const nextConfig = {
+	experimental: {
+        serverComponentsExternalPackages: [
+            '@react-email/components',
+            '@react-email/render',
+            // '@react-email/tailwind'
+        ]
+    },
 	env: {
 		ROOT: __dirname,
 	  },
