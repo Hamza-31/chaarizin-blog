@@ -14,6 +14,7 @@
 		"@heroicons/react": "^2.0.18",
 		"@meilisearch/instant-meilisearch": "^0.13.2",
 		"@next/env": "^13.4.9",
+		"@react-email/components": "^0.0.12",
 		"@sendgrid/mail": "^7.7.0",
 		"@tanstack/react-query": "^4.32.0",
 		"@types/node": "20.2.5",

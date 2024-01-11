@@ -16,7 +16,7 @@ export async function sendEmail(userData: EmailData) {
 			from: `Chaarizin <${process.env.RESEND_EMAIL_FROM as string}>`,
 			to: process.env.RESEND_EMAIL_TO as string,
 			subject: `Contact Chaarizin ${username}`,
-			react: ResendEmailTemplate({ email: email }),
+			react: ResendEmailTemplate({ email: email, message, username }),
 		});
 		if (error) {
 			return { success: false, error }

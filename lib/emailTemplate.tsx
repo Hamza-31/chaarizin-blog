@@ -1,4 +1,4 @@
-export default function emailTemplate({ email, message }: { email: string, message: string }) {
+export default function EmailTemplate({ email, message }: { email: string, message: string }) {
 	return `
 	<!DOCTYPE html>
 	<html>

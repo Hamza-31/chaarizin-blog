@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import sendgrid from "@sendgrid/mail";
-import emailTemplate from '@/lib/emailTemplate';
+import emailTemplate from '@/lib/EmailTemplate';
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY as string);
 
 export async function POST(request: Request) {
